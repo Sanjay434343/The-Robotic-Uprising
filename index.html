@@ -3,138 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The-Robotic-Uprising</title>
+    <title>The Robotic Uprising</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
 
-:root {
-  --start-letter-anim-time: 0.3s;
-  --full-title-anim-wait-time: calc(var(--start-letter-anim-time) + 1s);
-  --final-anim-time: 0.4s;
-}
+        :root {
+            --start-letter-anim-time: 0.3s;
+            --full-title-anim-wait-time: calc(var(--start-letter-anim-time) + 1s);
+            --final-anim-time: 0.4s;
+        }
 
-body {
-  background: black;
-  margin: 0;
-  padding: 0;
-  color: white;
-  height: 100dvh;
-  width: 100dvw;
-  font-family: 'Trade Winds', sans-serif;
-  font-size: 5vmin;
-  line-height: 1;
-  
-  display: grid;
-  place-items: center;
-  place-content: center;
-}
+        body {
+            background: black;
+            margin: 0;
+            padding: 0;
+            color: white;
+            height: 100vh; /* Use vh instead of dvh for better cross-browser support */
+            width: 100vw;  /* Use vw instead of dvw for better cross-browser support */
+            font-family: 'Trade Winds', sans-serif;
+            font-size: 5vmin;
+            line-height: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-h1 {
-  position: relative;
-  font-size: 5vmin;
-  line-height: 1;
-}
+        h1 {
+            position: relative;
+            font-size: 5vmin;
+            line-height: 1;
+            text-align: center;
+        }
 
-.the-e {
-  animation: the-e-start-left var(--start-letter-anim-time) linear, the-e-for-title var(--final-anim-time) var(--full-title-anim-wait-time) linear forwards;
-}
+        .the-e {
+            animation: the-e-start-left var(--start-letter-anim-time) linear, the-e-for-title var(--final-anim-time) var(--full-title-anim-wait-time) linear forwards;
+        }
 
-.three {
-  animation: three-start-right var(--start-letter-anim-time) linear, the-three-final var(--final-anim-time) var(--full-title-anim-wait-time) linear forwards;
-}
+        .three {
+            animation: three-start-right var(--start-letter-anim-time) linear, the-three-final var(--final-anim-time) var(--full-title-anim-wait-time) linear forwards;
+        }
 
-.the-e, .three {
-  font-size: 50vmin;
-  display: inline-block;
-}
+        .the-e, .three {
+            font-size: 50vmin;
+            display: inline-block;
+        }
 
-.rest-title {
-  font-size: 14vmin;
-  z-index: 1;
-  
-  position: absolute;
-  top: 34%;
-  left: 47%;
-  
-  display: flex;
-  flex-direction: column;
-  
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  animation: the-qua-reveal var(--final-anim-time) var(--full-title-anim-wait-time) linear forwards;
-}
+        .rest-title {
+            font-size: 14vmin;
+            z-index: 1;
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            animation: the-qua-reveal var(--final-anim-time) var(--full-title-anim-wait-time) linear forwards;
+        }
 
-.prefix {
-  scale: 0.5;
-  translate: -18% 35%;
-}
+        .prefix {
+            scale: 0.5;
+            translate: -18% 35%;
+        }
 
-@keyframes the-e-start-left {
-  from {
-    translate: 10% 0;
-  }
-  
-  to {
-    translate: 0 0;
-  }
-}
+        @keyframes the-e-start-left {
+            from {
+                transform: translateX(10%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
 
-@keyframes three-start-right {
-  from {
-    translate: -10% 0;
-  }
-  
-  to {
-    translate: 0 0;
-  }
-}
+        @keyframes three-start-right {
+            from {
+                transform: translateX(-10%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
 
-@keyframes the-e-for-title {
-  from {
-    translate: 0 0;
-    scale: 1;
-  }
-  
-  to {
-    translate: -22vmin 0;
-    scale: 0.3;
-  }
-}
+        @keyframes the-e-for-title {
+            from {
+                transform: translateX(0) scale(1);
+            }
+            to {
+                transform: translateX(-22vmin) scale(0.3);
+            }
+        }
 
-@keyframes the-three-final {
-  from {
-    color: white;
-    translate: 0 0;
-  }
-  
-  to {
-    color: red;
-    translate: -50% 0;
-  }
-}
+        @keyframes the-three-final {
+            from {
+                color: white;
+                transform: translateX(0);
+            }
+            to {
+                color: red;
+                transform: translateX(-50%);
+            }
+        }
 
-@keyframes the-qua-reveal {
-  from {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    translate: -60% -50%;
-    opacity: 0;
-  }
-  
-  to {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    translate: -50% -50%;
-    opacity: 1;
-  }
-}
-
+        @keyframes the-qua-reveal {
+            from {
+                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+                transform: translate(-60%, -50%);
+                opacity: 0;
+            }
+            to {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>
-        <span class='the-e'>U</span><span class='three'>1</span>
+        <span class='the-e' style="margin-left: 28px;">U</span><span class='three'>1</span>
         <span class="rest-title">
-          <span class="prefix">Robotic </span>
-          <span class="rest">prising</span>
+            <span class="prefix">Robotic </span>
+            <span class="rest">prising</span>
         </span>
-      </h1>
+    </h1>
+    <script>
+        // Function to navigate to main.html after a 10-second delay
+        function navigateToMain() {
+            setTimeout(() => {
+                window.location.href = '../page1/1.html';
+            }, 5000); // 10 seconds in milliseconds
+        }
+
+        // Add an event listener to call the function after the animation ends
+        document.querySelector('h1').addEventListener('animationend', navigateToMain);
+    </script>
 </body>
 </html>
