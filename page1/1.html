@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Book Layout</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0e0e0;
+        }
+        
+        .comic-book {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #000;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .comic-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .comic-panel {
+            flex: 1 1 calc(33.333% - 30px); /* Adjust to fit 3 panels in a row */
+            box-sizing: border-box;
+            position: relative;
+            border: 2px solid #000;
+            overflow: hidden;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #f0f0f0, #fff);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comic-panel img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+        }
+        
+        .panel-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            font-size: 1em;
+            box-sizing: border-box;
+            border-radius: 20px 20px 0 0;
+            border-top: 2px solid #fff;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .comic-panel:hover .panel-label {
+            transform: translateY(0);
+        }
+        
+        .text-label {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-top: 2px solid #000;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-label p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        
+        @media (max-width: 768px) {
+            .comic-panel {
+                flex: 1 1 calc(50% - 30px); /* 2 panels per row on tablets */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .comic-panel {
+                flex: 1 1 100%; /* 1 panel per row on mobile phones */
+            }
+        }
+        
+.nxt{
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #000000;
+    padding: 5px 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="comic-book">
+        <div class="comic-strip">
+            <div class="comic-panel">
+                <img src="pg1.JPEG" alt="Comic Panel 1">
+                <div class="panel-label">There are eight friends, including six boys and two girls. All of them are friends who go to college together every day.</div>
+            </div>
+            <div class="comic-panel">
+                <img src="pg2.JPEG" alt="Comic Panel 2">
+                <div class="panel-label">One evening, after finishing college, all eight friends went home. That night, they received an anonymous message. The post, sent to all eight friends, contained a secret key and a map leading to something mysterious.</div>
+            </div>
+            <div class="comic-panel">
+                <img src="pg3.JPEG" alt="Comic Panel 3">
+                <div class="panel-label">The next day, all the friends gathered together to discuss the mysterious post, the map, and the secret key.</div>
+            </div>
+        </div>
+        <div class="text-label">
+            <a href="../page2/2.html" class="nxt">Next</a>
+        </div>
+    </div>
+</body>
+</html>
